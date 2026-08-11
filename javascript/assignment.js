@@ -13,11 +13,10 @@ const users = [
 
 //---Assignment 1: Normalize Name---//
 function normalizeName(value) {
-  if (value == null || value.trim() === "") {
-    console.log("Value is null or empty");
+  if (typeof value !== "string" || value.trim() === "") {
     return "Unknown";
   }
-  console.log("Value is not null or empty");
+
   return value.trim();
 }
 
@@ -106,8 +105,8 @@ function getUserDisplayNameById(userArray, id){
 //console.log(getUserDisplayNameById(users, 101));
 
 //---Part C---//
-//1) typeof undefined is = undefined
-//2) typeof null is = object
+typeof undefined // "undefined"
+//2) typeof null = object
 //3) null/undefined means no value, but "" is a value or an empty string.
 
 console.log(normalizeName(" Ada ")); 
